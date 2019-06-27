@@ -16,11 +16,11 @@ public class TechJobs {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
-        columnChoices.put("core competency ", "Skill ");
-        columnChoices.put("employer ", "Employer ");
-        columnChoices.put("location ", "Location ");
-        columnChoices.put("position type ", "Position Type ");
-        columnChoices.put("all ", "All ");
+        columnChoices.put("core competency", "Skill ");
+        columnChoices.put("employer", "Employer ");
+        columnChoices.put("location", "Location ");
+        columnChoices.put("position type", "Position Type ");
+        columnChoices.put("all", "All ");
 
         // Top-level menu options
         HashMap<String, String> actionChoices = new HashMap<>();
@@ -30,7 +30,7 @@ public class TechJobs {
         System.out.println("Welcome to LaunchCode's TechJobs App!");
 
         // Allow the user to search until they manually quit
-        while (true) {
+        while(true) {
 
             String actionChoice = getUserSelection("View jobs by:", actionChoices);
 
@@ -84,7 +84,6 @@ public class TechJobs {
             choiceKeys[i] = choiceKey;
             i++;
         }
-
         do {
 
             System.out.println("\n" + menuHeader);
