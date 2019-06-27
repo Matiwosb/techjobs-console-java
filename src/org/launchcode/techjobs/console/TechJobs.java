@@ -2,6 +2,7 @@ package org.launchcode.techjobs.console;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -11,15 +12,15 @@ public class TechJobs {
 
     private static Scanner in = new Scanner(System.in);
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
 
         // Initialize our field map with key/name pairs
         HashMap<String, String> columnChoices = new HashMap<>();
-        columnChoices.put("core competency", "Skill");
-        columnChoices.put("employer", "Employer");
-        columnChoices.put("location", "Location");
-        columnChoices.put("position type", "Position Type");
-        columnChoices.put("all", "All");
+        columnChoices.put("core competency ", "Skill ");
+        columnChoices.put("employer ", "Employer ");
+        columnChoices.put("location ", "Location ");
+        columnChoices.put("position type ", "Position Type ");
+        columnChoices.put("all ", "All ");
 
         // Top-level menu options
         HashMap<String, String> actionChoices = new HashMap<>();
@@ -103,14 +104,24 @@ public class TechJobs {
                 validChoice = true;
             }
 
-        } while(!validChoice);
+        } while (!validChoice);
 
         return choiceKeys[choiceIdx];
     }
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        if (someJobs.size() > 0) {
+            for (HashMap<String, String> field : someJobs) {
+                for (Map.Entry<String, String> data : field.entrySet()) {
+                    System.out.println(data.getKey() + data.getValue());
 
-        System.out.println("printJobs is not implemented yet");
+                }
+            }
+            System.out.println("***********************");
+        } else {
+            System.out.println("Sorry there is nothing that matches your search");
+        }
     }
 }
+
